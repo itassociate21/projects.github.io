@@ -1,0 +1,181 @@
+
+body{
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.header{
+    background-color: #283593;
+    color: white;
+    display: flex;
+   justify-content: space-between;
+    align-items: center;
+    padding: 13px 45px;
+   flex-wrap: wrap;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 9999;
+   box-shadow: 0px 0px 4px 3px rgba(17, 3, 3, 0.75);
+   
+
+}
+.header h1{
+    margin: 0px;
+    font-size: 2.2em;
+    border: 4px solid white;
+    padding: 9px 19px;
+}
+/*.header h1{
+    flex: 1; can space out the logo and the list itmes on each end also. and not have to absolute position the icon class
+}*/
+.icon{
+    display: none;
+}
+.nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    
+}
+.nav li{
+    margin-left: 20px;/*set margin to li and not the anchor tags*/
+}
+.nav a{
+    font-size: 1.20rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease-out;
+}
+.nav a:hover{
+    color: #c5cae9;
+    transform: rotate(6deg);
+}
+.hero{
+    background-color: #c5cae9;
+    padding: 70px 45px;/*this hero is set to flex to justify content center of the page which is the hero-inner class...*/
+    display: flex;
+    justify-content: center;
+    
+  /* height: 100vh; is allowed with these rules*/
+   
+}
+.hero-inner{
+    max-width: 760px;/*set a limit to how big the content will be wide and contains the content within the limit and pushes down with padding top needs 60px of padding top because of the fixed nav bar andd will be too close to the nav bar*/
+  padding-top: 60px;
+    
+}
+.hero-inner h1{
+    font-weight: normal;
+    font-size: 4rem;
+    margin: 0;
+    
+}
+.hero-inner p{
+    font-size: 1.18rem;
+    line-height: 1.6;
+}
+
+.hero-inner .button{
+    background-color: #3949ab;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.18rem;
+    display: inline-block;/*display is inline-block because the button will be too close to the text*/
+}
+.features{
+    background-color: #e8eaf6;
+    padding: 60px 45px; 
+    /*display: grid;
+    justify-content: center; use this to avoid using margin: 0 auto in class features-inner down there */
+}
+.features-inner{/* if comment above is followed display grid and justify content still needs to be used or the features will not be aligned center*/
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 17rem));
+    column-gap: 35px;
+    row-gap: 25px;  
+}
+
+
+.featured-item h3{
+    color: #283593;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0;  
+}
+.featured-item img{
+    max-width: 100%;
+}
+.featured-item p{
+    margin: 0;
+    line-height: 1.6;
+    color: rgb(16, 8, 8);
+    font-size: 18px;
+
+    margin: 2px 0;
+    
+}
+.footer{
+    text-align: center;
+    padding: 20px 0px;
+    color: rgb(10, 10, 10);
+    font-size: .9rem;
+} 
+
+@media only screen and (min-width: 200px) and (max-width: 700px){
+.header{
+     justify-content: center;
+     text-align: center;      
+}  
+.icon{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    display: block;
+}
+label.hide.icon i::before{  /*does not have to include .icon class or .o class but is good to understand whats happening*/
+    content: '\f00d';
+}
+.nav{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    float: right;
+    background-color: purple;
+    top: 94px;        
+    text-align: center;         
+    transition: all .5s;
+    display: none;       
+}
+.nav li{
+    margin: 50px 0px;    
+}
+.nav a{
+    font-size: 1.18rem;
+   }
+.nav.show{
+    display: block;
+}
+.hero{
+   height: 100vh;/*removes the padding of 70 from the top and bottom of the hero class not the hero inner and decreases the padding from left and right and cover the entire viewport height....if 100vh is not wanted, adjust the padding top and bottom by increasing it*/
+    padding:35px 33px;
+    align-items: center;   
+}    
+.hero-inner{
+padding-top: 10px;
+}
+
+/*to fit whitin the galaxy fold...more rules need to be made to shrink some itmes down. */
+/* if comment above is followed display grid and justify content still needs to be used or the features will not be aligned center*/
+
+}
